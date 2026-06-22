@@ -1,5 +1,6 @@
 use super::activation::Activation;
-use crate::util::{rng::Rng, vector::VecN};
+use crate::util::vector::VecN;
+use rand::Rng;
 
 pub struct Layer {
     pub weights: Vec<VecN>,
@@ -12,13 +13,13 @@ pub struct Layer {
 
 impl Layer {
     pub fn new(input_size: usize, output_size: usize, activation: Activation) -> Self {
-        let mut rng = Rng::new();
+        let mut rng = rand::thread_rng();
         let scale = (6.0_f64 / (input_size + output_size) as f64).sqrt();
         let weights = (0..output_size)
             .map(|_| {
                 VecN::new(
                     (0..input_size)
-                        .map(|_| rng.gen_range(-scale, scale))
+                        .map(|_| rng.gen_range(-scale..scale))
                         .collect(),
                 )
             })
