@@ -1,4 +1,4 @@
-# rust-nn
+# dnn-rs
 
 A minimal deep neural network library in Rust. Supports dense layers, backpropagation, and common activations and loss functions.
 
@@ -15,14 +15,14 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-rust-nn = { path = "../rust-nn" }
+dnn-rs = { path = "../dnn-rs" }
 ```
 
 Or via git:
 
 ```toml
 [dependencies]
-rust-nn = { git = "https://github.com/sgsikorski/rust-nn" }
+dnn-rs = { git = "https://github.com/sgsikorski/dnn-rs" }
 ```
 
 ## Usage
